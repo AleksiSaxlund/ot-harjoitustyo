@@ -1,6 +1,6 @@
 # OTSIKKO
 
-tavallista tekstiä, joka sisältää **lihavoituja** ja *kursivoituja* osuuksia.
+Tavallista tekstiä, joka sisältää **lihavoituja** ja *kursivoituja* osuuksia.
 
 # **viikko 1**
 
