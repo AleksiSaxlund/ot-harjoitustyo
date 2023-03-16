@@ -1,0 +1,106 @@
+commit 37ebcd4f05a3ef8ca5c0cbc1b549342fa6567d4e
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:38:20 2023 +0200
+
+    muutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9d74747bd99ea7b066570b3051cadfc05774f865
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:33:10 2023 +0200
+
+    tiedotoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 55724d18a6564587e75ba5101c65b078beacc34a
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:27:01 2023 +0200
+
+    muutos
+
+ eka.txt    | 7 +++----
+ kolmas.txt | 4 +++-
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+commit edcd282a46f0f67130950ee300c76933041c1544
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:24:21 2023 +0200
+
+    muutoksia
+
+ tiedosto.txt => eka.txt | 0
+ toinen.txt              | 1 -
+ 2 files changed, 1 deletion(-)
+
+commit ce586ccc7bc51f9eb0b9d7e716af62406c00849a
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:21:13 2023 +0200
+
+    muutos tekstiä
+
+ tiedosto.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 339ef18626f8a08f0043659b216586376d4bcb42
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:20:12 2023 +0200
+
+    tekstiä
+
+ tiedosto.txt | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit 0b687a6c3f5a9c9aa66784334cb0b6b52f3198f4
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:15:17 2023 +0200
+
+    stuff
+
+ stuff/asd.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 49c9e7816cab14052ffaaa93786f3a3dd127cbca
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:14:10 2023 +0200
+
+    muutos
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 0a64eba553b62b6a1799629e1acf4aff89e496a6
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:12:45 2023 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 20028ee31c9f9d9b3ed918b616e96adf1ea32649
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:09:37 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 3b802c9bc56868cb5d451a2d10c2e5cd97963f22
+Author: Aleksi <aleksi.saxlund@gmail.com>
+Date:   Wed Mar 15 17:07:28 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
