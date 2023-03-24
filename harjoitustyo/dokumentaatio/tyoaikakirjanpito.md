@@ -1,5 +1,5 @@
 # Työaikakirjanpito
 
-| päivä | aika | mitä tein |
-| :---: | :--- | :-------- |
-| 24.3. | 1    | vaativuusmäärittelyn teko |
+| päivä | tunnit | mitä tein |
+| :---: | :----- | :-------- |
+| 24.3. | 1      | vaativuusmäärittelyn teko |
