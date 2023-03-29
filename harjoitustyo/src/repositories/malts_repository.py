@@ -1,18 +1,13 @@
-import sqlite3 as sql
-#from entities.malt import Malt
-import database_connections
 
 class MaltsRepository:
 
-    def _init__(self, connection):
+    def __init__(self, connection):
         self._connection = connection
 
     def find_malt(self, search: str):
-        db = self._connection
+        connection = self._connection
 
-        found = db.execute("SELECT * FROM Malts WHERE nimi LIKE %?%", [search]).fetch_all()
+        found = connection.execute("SELECT name, ppg, color FROM Malts WHERE name LIKE ?", [f'%{search}%']).fetchall()
 
         return found
     
-asd = MaltsRepository(database_connections.get_malts_connection())
-print(asd.find_malt("pale"))
