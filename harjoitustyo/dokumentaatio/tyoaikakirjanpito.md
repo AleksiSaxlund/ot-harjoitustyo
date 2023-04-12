@@ -7,4 +7,6 @@
 | 28.3. | 2    | Perustoiminnallisuuden ja arkkitehtuurin hahmottelua |
 | 29.3. | 2    | Calculationsservices ja testien tekoa |
 | 4.4.  | 2    | index.py tekoa, invoke tekoa ja dokumentaatiota |
+| 9.4.  | 2    | Käyttöliittymäkirjastoihin perehtymistä |
+| 12.4. | 4    | Calculations services moduulin jatkamista ja vastaavien testien tekoa |
 | yht   | 9    |           |

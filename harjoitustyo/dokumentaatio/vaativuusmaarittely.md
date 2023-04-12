@@ -10,12 +10,13 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
 
 - Käyttäjä voi lisätä tietokannasta maltaita, humalia sekä hiivoja reseptiin
 - Käyttäjä voi myös lisätä tietokantaan omia ainesosia
-- Käyttäjä voi määrittää erän suuruuden
+- Käyttäjä voi määrittää erän suuruuden (tehty)
 - Jokaisen lisäyksen jälkeen ainakin seuraavien arvojen oletukset lasketaan ja näytetään käyttäjälle
-  - Original Gravity
+  - Original Gravity (tehty)
   - Final Gravity
   - ABV
   - IBU
+  - SRM (tehty)
 
 ### Jatkokehitysideoita
 
@@ -24,7 +25,7 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
 - CO2 laskeminen
 - Muiden satunnaisten ainesosien lisääminen
 - Käyttäjä voi valinta Yhdysvaltalaisen- tai metrijärjestelmän
-- SRM laskeminen sekä väriä havainnoillistava kuva
+- Väriä havainnoillistava kuva
 - Käyttäjä voi itse kirjoittaa erillisiä muistiinpanoja reseptistä
 
 ## Käyttöliittymäluonnos

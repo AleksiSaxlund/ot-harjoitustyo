@@ -1,5 +1,4 @@
 
-
 class Malt:
     def __init__(self, name: str, ppg: float, color: int):
         self.amount = 0
