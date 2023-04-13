@@ -5,11 +5,7 @@ from entities.all_ingredients import Malt, Hop, Yeast
 
 
 def temp_main_loop_2():
-    recipe = Recipe()
-    calculator = CalculationsService(recipe)
-    all_malts = MaltsRepository()
-    all_hops = HopsRepository()
-    all_yeasts = YeastsRepository()
+    recipe, calculator, all_malts, all_hops, all_yeasts = initialize()
     controls()
 
     while True:
@@ -30,16 +26,25 @@ def temp_main_loop_2():
         else:
             controls()
 
+def initialize():
+    recipe = Recipe()
+    calculator = CalculationsService(recipe)
+    all_malts = MaltsRepository()
+    all_hops = HopsRepository()
+    all_yeasts = YeastsRepository()
+    return recipe, calculator, all_malts, all_hops, all_yeasts
 
 def show_calculations(calculator):
     original_gravity, final_gravity, abv, color = calculator.get_all_calculations()
     print(
-        f"original gravity: {original_gravity}, final gravity: {final_gravity}, ABV: {abv}, SRM: {color}")
+        f"original gravity: {original_gravity}, final gravity: {final_gravity}"
+        f", ABV: {abv}, SRM: {color}")
     print()
+
 
 def show_ingredients(recipe):
     print("Malts: ")
-    [print(malt.name) for malt in recipe.ingredients["malts"]]
+    [print(f"{malt.name}, - {malt.amount} lb") for malt in recipe.ingredients["malts"]]
     print()
     print("Hops: ")
     [print(hop.name) for hop in recipe.ingredients["hops"]]
@@ -74,6 +79,7 @@ def add_malt(all_malts, recipe):
     else:
         print("Incorrect ID. Malt not added")
 
+
 def add_hop(all_hops, recipe):
     print("Search the hop by name.")
     search = input("Search: ")
@@ -90,7 +96,8 @@ def add_hop(all_hops, recipe):
         recipe.ingredients["hops"].append(selected_hop)
     else:
         print("Incorrect ID. Hop not added.")
-    
+
+
 def add_yeast(all_yeasts, recipe):
     print("Search the Yeast by name.")
     search = input("Search: ")
@@ -102,7 +109,7 @@ def add_yeast(all_yeasts, recipe):
     print("Choose the ID of the hop which you want to add to the recipe.")
 
     choice = int(input("ID: "))
-    if choice <= len(found):
+    if choice < len(found):
         selected_yeast = found[choice][1]
         recipe.ingredients["yeasts"].append(selected_yeast)
     else:
