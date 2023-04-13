@@ -8,3 +8,4 @@ class Recipe:
         self.ibu = 0
         self.volume = 0
         self.mashing_efficiency = 0.70
+        self.boiltime = 0

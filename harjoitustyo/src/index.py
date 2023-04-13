@@ -1,47 +1,68 @@
 from repositories.ingredients_repository import MaltsRepository
-import database_connections
 from services.calculations_services import CalculationsService
 from entities.recipe import Recipe
-from entities.all_ingredients import Malt
+from entities.all_ingredients import Malt, Hop, Yeast
 
 
-def temp_main_loop():
-    recipe = Recipe()
-    calculator = CalculationsService(recipe)
-    all_malts = MaltsRepository(database_connections.get_malts_connection())
-
+def temp_main_loop_2():
     while True:
+        recipe = Recipe()
+        calculator = CalculationsService(recipe)
+        all_malts = MaltsRepository()
         controls()
-        action = input("Action: ")
+        show_calculations(calculator)
+        action = get_inputs()
 
         if action == "1":
-            recipe.ingredients["malts"].append(create_malt())
-
+            add_malt()
         elif action == "2":
-            recipe.volume = float(input("Volume of the recipe: "))
-
+            pass
         elif action == "3":
-            print("Original Gravity", calculator.calculate_original_gravity())
-        
+            pass
         elif action == "4":
-            print("Final Gravity: ", calculator.calculate_final_gravity())
-
+            recipe.volume = float(input("The new volume: "))
         elif action == "5":
-            print("SRM color", calculator.calculate_color())
-
-        elif action == "6":
-            find_malt(all_malts)
-
-        elif action == "7":
+            pass
+        else:
             break
+
+
+def show_calculations(calculator):
+    original_gravity, final_gravity, abv, color = calculator.get_all_calculations()
+    print(
+        f"original gravity: {original_gravity}, final gravity: {final_gravity}, ABV: {abv}, SRM: {color}")
+    print()
+
+
+def get_inputs():
+    action = input("Action: ")
+    return action
+
+
+def add_malt(malts, recipe):
+    print("Search the malt by name.")
+    search = input("Search: ")
+    found = malts.search(search)
+
+    for malt in found:
+        print(f"id: {malt[0]}, name: {malt[1].name}")
+    print()
+    print("Choose the ID of the malt which you want to add to the recipe.")
+
+    choice = int(input("ID: "))
+    if choice <= len(found):
+        selected_malt = found[choice][1]
+        recipe.ingredients["malts"].append(selected_malt)
+    else:
+        print("Incorrect ID.")
 
 
 def controls():
     print()
     print("1: Add malt to the recipe")
-    print("2: Change recipe volume")
-    print("3: Calculate Original Gravity")
-    print("4: Calculate SRM color")
+    print("2: Add hop to the recipe")
+    print("3: Add yeast to the recipe")
+    print("4: Change recipe volume")
     print("5: Search malts from the database")
     print("6: End")
     print()
@@ -67,4 +88,4 @@ def find_malt(all_malts):
     print("Currently the malt data must be manually written into the recipe.")
 
 
-temp_main_loop()
+temp_main_loop_2()

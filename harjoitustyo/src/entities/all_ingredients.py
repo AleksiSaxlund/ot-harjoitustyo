@@ -10,6 +10,7 @@ class Malt:
 class Hop:
     def __init__(self, name: str, alpha_acids: float):
         self.amount = 0
+        self.boiltime = 0
         self.name = name
         self.alpha_acids = alpha_acids
 
