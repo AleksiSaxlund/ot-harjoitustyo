@@ -15,7 +15,7 @@ class MaltsRepository:
 
         for malt in self.malts:
             if search.lower() in malt[0].lower():
-                found.append(Malt(malt[0], malt[1], malt[2]))
+                found.append(Malt(malt[0], float(malt[1]), int(malt[2])))
 
         return list(enumerate(found))
 
@@ -32,7 +32,7 @@ class HopsRepository:
 
         for hop in self.hops:
             if search.lower() in hop[0].lower():
-                found.append(Hop(hop[0], hop[1]))
+                found.append(Hop(hop[0], float(hop[1])))
 
         return list(enumerate(found))
 
@@ -48,7 +48,7 @@ class YeastsRepository:
         found = []
 
         for yeast in self.yeasts:
-            if search.lower() in self.yeast[0].lower():
-                found.append(Yeast(yeast[0], yeast[1], yeast[2]))
+            if search.lower() in yeast[0].lower():
+                found.append(Yeast(yeast[0], float(yeast[1]), yeast[2]))
 
         return list(enumerate(found))
