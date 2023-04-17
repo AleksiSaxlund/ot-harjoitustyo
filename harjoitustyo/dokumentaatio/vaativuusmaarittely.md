@@ -11,9 +11,9 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
 - Käyttäjä voi lisätä tietokannasta maltaita, humalia sekä hiivoja reseptiin (tehty)
 - Käyttäjä voi myös lisätä tietokantaan omia ainesosia
 - Käyttäjä voi määrittää erän suuruuden (tehty)
-- Jokaisen lisäyksen jälkeen ainakin seuraavien arvojen oletukset lasketaan ja näytetään käyttäjälle
+- Jokaisen lisäyksen jälkeen ainakin seuraavien arvojen oletukset lasketaan ja näytetään käyttäjälle (tehty)
   - Original Gravity (tehty)
-  - Final Gravity
+  - Final Gravity (tehty)
   - ABV (tehty)
   - IBU (tehty)
   - SRM (tehty)
