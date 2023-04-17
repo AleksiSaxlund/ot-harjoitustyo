@@ -10,4 +10,5 @@
 | 9.4.  | 2    | Käyttöliittymäkirjastoihin perehtymistä |
 | 12.4. | 4    | Calculations services moduulin jatkamista ja vastaavien testien tekoa |
 | 13.4. | 5    | Index.py tekoa, calclulations servicesin debuggailua ja repositoryjen jatkamista |
-| yht   | 20   |           |
+| 17.4. | 2    | Dokumentaation täydentelyä ja siistimistä |
+| yht   | 22   |           |
