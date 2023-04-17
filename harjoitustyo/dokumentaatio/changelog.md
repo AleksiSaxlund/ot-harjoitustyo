@@ -18,3 +18,12 @@
 - Lisätty toiminnallisuutta calculations_services luokkaan
 - Luotu testejä calculations_services luokalle
 - Määritelty invoke-tehtäviä
+
+## Viikko 4
+
+- Reseptiin voi lisätä nyt myös humalia ja hiivoja
+- Voidaan laskea myös final gravity, ABV ja SRM
+- Laskelmat näytetään automaattisesti muutosten jälkeen
+- Kaikki ainesosia voidaan hakea tietokannasta ja lisätä suoraan reseptiin
+- Korjattu hiivojen tietokannassa oleva virhe
+- Luotu management_services sovelluslogiikalle
