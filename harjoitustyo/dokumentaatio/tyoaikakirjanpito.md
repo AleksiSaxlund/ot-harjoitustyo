@@ -13,5 +13,5 @@
 | 17.4. | 2    | Dokumentaation täydentelyä ja siistimistä |
 | 19.4. | 4    | PyQt5 harjoittelua |
 | 24.4. | 7    | Käyttöliittymän tekemistä |
-| 25.4. | 
-| yht   | 22   |           |
+| 25.4. | 6    | Käyttöliittymän jatkamista ja lopullisen sovelluslogiikan sovittelua |
+| yht   | 39   |           |
