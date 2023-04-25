@@ -1,5 +1,7 @@
 # Homebrewing Calculator
 
+Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava voi suunnitella reseptejä. Sovelluksella voi lisätä reseptiin ainesosia ja se laskee aina ainesosien muuttuessa eri arvoja, jotka auttavat reseptin suunnittelussa.
+
 ## Dokumentaatio
 
 - [tyoaikakirjanpito.md](./harjoitustyo/dokumentaatio/tyoaikakirjanpito.md)
