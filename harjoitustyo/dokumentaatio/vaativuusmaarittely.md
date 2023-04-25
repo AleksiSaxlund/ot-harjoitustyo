@@ -26,7 +26,7 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
 - Muiden satunnaisten ainesosien lisääminen
 - Käyttäjä voi valinta Yhdysvaltalaisen- tai metrijärjestelmän
 - Väriä havainnoillistava kuva
-- Käyttäjä voi itse kirjoittaa erillisiä muistiinpanoja reseptistä
+- Käyttäjä voi itse kirjoittaa erillisiä muistiinpanoja reseptistä (tehty)
 
 ## Käyttöliittymäluonnos
 
