@@ -40,15 +40,23 @@ class HopsRepository:
 class YeastsRepository:
     def __init__(self):
         self._connection = database_connections.get_yeasts_connection()
-        self.yeasts = self._connection.execute(
+        self._yeasts = self._connection.execute(
             "SELECT name, attenuation, temperature_range FROM Yeasts", []
         ).fetchall()
 
     def search(self, search):
         found = []
 
-        for yeast in self.yeasts:
+        for yeast in self._yeasts:
             if search.lower() in yeast[0].lower():
                 found.append(Yeast(yeast[0], float(yeast[1]), yeast[2]))
 
         return list(enumerate(found))
+
+    def get_all_yeasts(self):
+        yeasts = []
+
+        for yeast in self._yeasts:
+            yeasts.append(Yeast(yeast[0], float(yeast[1]), yeast[2]))
+
+        return yeasts

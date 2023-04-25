@@ -11,4 +11,7 @@
 | 12.4. | 4    | Calculations services moduulin jatkamista ja vastaavien testien tekoa |
 | 13.4. | 5    | Index.py tekoa, calclulations servicesin debuggailua ja repositoryjen jatkamista |
 | 17.4. | 2    | Dokumentaation täydentelyä ja siistimistä |
+| 19.4. | 4    | PyQt5 harjoittelua |
+| 24.4. | 7    | Käyttöliittymän tekemistä |
+| 25.4. | 
 | yht   | 22   |           |

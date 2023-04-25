@@ -2,6 +2,11 @@ from repositories.ingredients_repository import MaltsRepository, HopsRepository,
 from services.calculations_services import CalculationsService
 from entities.recipe import Recipe
 
+#
+# This entire file is temporary. It's only purpose is to enable the app to be ran
+# on the terminal until GUI has been implemented.
+#
+
 
 def temp_main_loop_2():
     recipe, calculator, all_malts, all_hops, all_yeasts = initialize()
@@ -21,9 +26,18 @@ def temp_main_loop_2():
         elif action == "4":
             recipe.volume = float(input("The new volume: "))
         elif action == "5":
+            recipe.notes.append(notes_input())
+        elif action == "6":
             break
         else:
             controls()
+
+
+def notes_input():
+    print("New notes:")
+    note = input()
+    return note
+
 
 def initialize():
     recipe = Recipe()
@@ -33,23 +47,34 @@ def initialize():
     all_yeasts = YeastsRepository()
     return recipe, calculator, all_malts, all_hops, all_yeasts
 
+
 def show_calculations(calculator):
-    original_gravity, final_gravity, abv, color = calculator.get_all_calculations()
+    original_gravity, final_gravity, abv, color, ibu = calculator.get_all_calculations()
     print(
         f"original gravity: {original_gravity}, final gravity: {final_gravity}"
-        f", ABV: {abv}, SRM: {color}")
+        f", ABV: {abv}, SRM: {color}, IBU: {ibu}")
     print()
 
 
 def show_ingredients(recipe):
     print("Malts: ")
-    [print(f"{malt.name}, - {malt.amount} lb") for malt in recipe.ingredients["malts"]]
+    for malt in recipe.ingredients["malts"]:
+        print(f"{malt.name}, - {malt.amount} lb")
     print()
+
     print("Hops: ")
-    [print(hop.name) for hop in recipe.ingredients["hops"]]
+    for hop in recipe.ingredients["hops"]:
+        print(f"{hop.name}, - {hop.amount}")
     print()
+
     print("Yeasts: ")
-    [print(yeast.name) for yeast in recipe.ingredients["yeasts"]]
+    for yeast in recipe.ingredients["yeasts"]:
+        print(yeast.name)
+    print()
+
+    print("Notes:")
+    for row in recipe.notes:
+        print(row)
     print()
 
 
@@ -90,8 +115,10 @@ def add_hop(all_hops, recipe):
     print("Choose the ID of the hop which you want to add to the recipe.")
 
     choice = int(input("ID: "))
+    amount = float(input("Amount: "))
     if choice <= len(found):
         selected_hop = found[choice][1]
+        selected_hop.amount = amount
         recipe.ingredients["hops"].append(selected_hop)
     else:
         print("Incorrect ID. Hop not added.")
@@ -121,5 +148,6 @@ def controls():
     print("2: Add hop to the recipe")
     print("3: Add yeast to the recipe")
     print("4: Change recipe volume")
-    print("5: End")
+    print("5: Add notes")
+    print("6: End")
     print()

@@ -64,10 +64,25 @@ class CalculationsService:
 
         return round(color, 2)
 
+    # AAU = AMOUNT * ALPHA ACID%
+    # IBU = AAU * U * VOLUME
+    def calculate_ibu(self):
+        if len(self._recipe.ingredients["hops"]) == 0:
+            return 0
+
+        alpha_acid_units = 0
+        for hop in self._recipe.ingredients["hops"]:
+            alpha_acid_units += hop.amount * hop.alpha_acids
+
+        international_bitterin_units = (
+            alpha_acid_units * 0.276 * 74.89) / self._recipe.volume
+        return international_bitterin_units
+
     def get_all_calculations(self):
         original_gravity = self.calculate_original_gravity()
         final_gravity = self.calculate_final_gravity()
         abv = self.calculate_abv()
         color = self.calculate_color()
+        ibu = self.calculate_ibu()
 
-        return original_gravity, final_gravity, abv, color
+        return original_gravity, final_gravity, abv, color, ibu

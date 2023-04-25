@@ -23,3 +23,7 @@ def format(ctx):
 @task 
 def lint(ctx):
     ctx.run("pylint src", pty=True)
+
+@task
+def start_gui(ctx):
+    ctx.run("python3 src/gui_index.py", pty=True)

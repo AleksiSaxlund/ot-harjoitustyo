@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 invoke = "^2.0.0"
+pyqt5 = "^5.15.9"
 
 
 [tool.poetry.group.dev.dependencies]

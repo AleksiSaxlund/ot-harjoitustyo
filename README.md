@@ -13,6 +13,11 @@
 
 	poetry run invoke start
 
+### Ohjelman käynnistys GUI:n kanssa:
+HUOM. Vain rajallinen toimivuus
+
+    poetry run invoke start-gui
+
 ### Testien suoritus:
 
     poetry run invoke test

@@ -1,3 +1,3 @@
-import services.management_service
+from services.management_service import temp_main_loop_2
 
-services.management_service.temp_main_loop_2()
+temp_main_loop_2()

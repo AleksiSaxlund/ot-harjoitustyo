@@ -27,3 +27,11 @@
 - Kaikki ainesosia voidaan hakea tietokannasta ja lisätä suoraan reseptiin
 - Korjattu hiivojen tietokannassa oleva virhe
 - Luotu management_services sovelluslogiikalle
+
+## Viikko 5
+
+- Graafinen käyttöliittymä osittain toiminnassa
+- Lisätty IBU:n laskeminen
+- Lisätty muistiinpano ominaisuus
+- Luotu manager_services vastaamaan sovelluslogiikasta
+- Lisätty testikattavuutta
