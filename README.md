@@ -23,10 +23,9 @@ Suorita komento `poetry install` /harjoitustyo/ kansiossa. Tämän jälkeen sove
 
 	poetry run invoke start
 
-### Ohjelman käynnistys GUI:n kanssa:
-HUOM. Vain rajallinen toimivuus
+### Ohjelman tekstipohjaisen version käynnistys:
 
-    poetry run invoke start-gui
+    poetry run invoke start-text
 
 ### Testien suoritus:
 

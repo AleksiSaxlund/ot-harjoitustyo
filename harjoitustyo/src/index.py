@@ -1,3 +1,3 @@
-from services.management_service import temp_main_loop_2
+from ui.ui import run
 
-temp_main_loop_2()
+run()

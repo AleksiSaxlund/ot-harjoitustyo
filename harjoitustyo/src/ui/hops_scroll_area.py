@@ -72,7 +72,7 @@ class HopsScrollArea(QWidget):
         for i in reversed(range(horizontal_box.count())):
             horizontal_box.itemAt(i).widget().setParent(None)
         horizontal_box.setParent(None)
-    
+
     def get_row(self, horizontal_box):
         # Returns the index of the horizontal box on the vertical box
         for i in range(self.vertical_box.count()):
@@ -98,12 +98,12 @@ class HopsScrollArea(QWidget):
         values = self.manager.ingredient_added(
             self.all_hops[index], "hops")
         self.data_grid.update_values(values)
-    
+
     def line_edit_signal(self, text, horizontal_box):
         try:
             index = self.get_row(horizontal_box)
-            print(index)
-            values = self.manager.ingredient_amount_changed(float(text), index, "hops")
+            values = self.manager.ingredient_amount_changed(
+                float(text), index, "hops")
             self.data_grid.update_values(values)
         except:
             pass

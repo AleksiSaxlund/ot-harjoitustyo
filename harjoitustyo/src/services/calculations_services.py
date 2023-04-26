@@ -2,12 +2,33 @@ from entities.recipe import Recipe
 
 
 class CalculationsService:
+    """Handles all of the calculations for the recipe.
+
+    All of the calculations are done in pounds and gallons unless specified otherwise.
+
+    Attributes:
+        recipe: The recipe class which represents the real recipe.
+    """
+
     def __init__(self, recipe: Recipe):
+        """Constructor of the Calculations_services class
+
+        Args:
+            recipe (Recipe): The recipe class which represents the real recipe.
+        """
         self._recipe = recipe
 
-    # OG kaava: OG = (MALTAAN MÄÄRÄ + MALTAAN PPG) / ERÄN KOKO
-    # Yksiköt: pound ja gallon
     def calculate_original_gravity(self):
+        """Calculates the original gravity of the recipe using values saved into the recipe class.
+
+        This performs the following equation:
+            GU = (malt.amount + malt.ppg) for all malts in the recipe
+            OG = GU / recipe.volume
+
+        Returns:
+            float: Calculated original gravity
+        """
+
         if self._recipe.volume <= 0 or len(self._recipe.ingredients["malts"]) == 0:
             return 1.000
 
@@ -21,9 +42,19 @@ class CalculationsService:
 
         return original_gravity
 
-    # FINAL GRAVITY = OG - (OG - 1) * ATTENUATION
-    # ATTENUATION = ATTENUATION - 0.0225 * (X - 67.5)
     def calculate_final_gravity(self):
+        """Calculates the final gravity of the recipe using values saved into the recipe class.
+
+        This performs the following equation:
+            attenuation = (average attenuation of yeast) - 0.0225 * (65 - 67.5)
+            fg = og - (og - 1) * attenuation
+
+        This equations accuracy could be improved.
+
+        Returns:
+            float: Calculated final gravity
+        """
+
         original_gravity = self.calculate_original_gravity()
 
         if len(self._recipe.ingredients["yeasts"]) == 0:
@@ -43,6 +74,14 @@ class CalculationsService:
 
     # ABV KAAVA = (OG - FG) * 131.25
     def calculate_abv(self):
+        """Calculates the abv of the recipe using values saved into the recipe class.
+
+        This performs the following equation:
+            abv = (og - fg) * 131.25
+
+        Returns:
+            float: Calculated abv
+        """
         original_gravity = self.calculate_original_gravity()
         final_gravity = self.calculate_final_gravity()
         abv = (original_gravity - final_gravity) * 131.25
@@ -51,6 +90,15 @@ class CalculationsService:
     # MCU = (MALTAIDEN MÄÄRÄ * MALTAAN VÄRIASTE) / MÄÄRÄ
     # SRM VÄRI = 1.4922 * (MCU ^ 0.6859)
     def calculate_color(self):
+        """Calculates the srm of the recipe using values saved into the recipe class.
+
+        This performs the following equation:
+            mcu = (malt.amount * malt.color) for all malts in the recipe
+            srm = 1.4922 * ((mcu / recipe.volume)^0.6859)
+
+        Returns:
+            float: Calculated srm 
+        """
         if self._recipe.volume <= 0:
             return 0.00
 
@@ -67,6 +115,19 @@ class CalculationsService:
     # AAU = AMOUNT * ALPHA ACID%
     # IBU = AAU * U * VOLUME
     def calculate_ibu(self):
+        """Calculates the ibu of the recipe using values saved into the recipe class.
+
+        This performs the following equation:
+            aau = (hop.amount * hop.alpha_acids) for all hops in the recipe.
+            ibu = aau * U / recipe.volume
+
+        This equations accuracy could be significantly increased. 
+        The U variable is just and average approximation in this.
+
+        Returns:
+            float: Calculated ibu
+        """
+
         if len(self._recipe.ingredients["hops"]) == 0:
             return 0
 
@@ -79,6 +140,12 @@ class CalculationsService:
         return international_bitterin_units
 
     def get_all_calculations(self):
+        """Performs all of the calculations defined in this class.
+
+        Returns:
+            tuple: A tuple of all calculations.
+        """
+
         original_gravity = self.calculate_original_gravity()
         final_gravity = self.calculate_final_gravity()
         abv = self.calculate_abv()
