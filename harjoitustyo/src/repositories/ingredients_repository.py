@@ -19,6 +19,14 @@ class MaltsRepository:
 
         return list(enumerate(found))
 
+    def get_all_malts(self):
+        malts = []
+
+        for malt in self.malts:
+            malts.append(Malt(malt[0], float(malt[1]), int(malt[2])))
+        
+        return malts
+
 
 class HopsRepository:
     def __init__(self):
@@ -35,7 +43,14 @@ class HopsRepository:
                 found.append(Hop(hop[0], float(hop[1])))
 
         return list(enumerate(found))
+    
+    def get_all_hops(self):
+        hops = []
 
+        for hop in self.hops:
+            hops.append(Hop(hop[0], float(hop[1])))
+
+        return hops
 
 class YeastsRepository:
     def __init__(self):

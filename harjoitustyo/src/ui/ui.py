@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
 
     def init_ui(self):
         self.setWindowTitle("Homebrewing Calculator")
-        self.setFixedSize(850, 720)
+        self.setFixedSize(1000, 720)
 
         # Setup layout
         main_widget = QWidget()

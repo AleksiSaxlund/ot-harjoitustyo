@@ -40,7 +40,7 @@ class YeastsScrollArea(QWidget):
 
         # Add widget to self layout
         self.scroll_area.setWidget(self.widget)
-        self.setFixedSize(400, 300)
+        self.setFixedSize(475, 300)
 
         self.setLayout(QVBoxLayout(self))
         self.layout().addWidget(self.scroll_area)
@@ -86,7 +86,8 @@ class YeastsScrollArea(QWidget):
     def init_combo_box(self):
         # Create object
         combo_box = QComboBox()
-        combo_box.setMaximumWidth(275)
+        combo_box.setMaximumWidth(345)
+        combo_box.addItem("")
         combo_box.addItems([yeast.name for yeast in self.all_yeasts])
         combo_box.activated.connect(self.combo_box_signal)
 
@@ -94,6 +95,7 @@ class YeastsScrollArea(QWidget):
         combo_box.setEditable(True)
         combo_box.setInsertPolicy(QComboBox.NoInsert)
         combo_box.completer().setCompletionMode(QCompleter.PopupCompletion)
+        combo_box.completer().setFilterMode(Qt.MatchContains)
 
         return combo_box
 

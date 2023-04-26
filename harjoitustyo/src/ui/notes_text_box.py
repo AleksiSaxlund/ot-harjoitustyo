@@ -25,4 +25,4 @@ class NotesTextBox(QWidget):
         layout.addWidget(text_box)
         layout.setSpacing(10)
         self.setLayout(layout)
-        self.setFixedSize(400, 283)
+        self.setFixedSize(475, 283)

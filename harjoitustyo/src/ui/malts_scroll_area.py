@@ -11,6 +11,7 @@ class MaltsScrollArea(QWidget):
         super().__init__()
         self.manager = manager
         self.data_grid = data_grid
+        self.all_malts = self.manager.get_all_malts()
         self.init_ui()
 
     def init_ui(self):
@@ -34,7 +35,7 @@ class MaltsScrollArea(QWidget):
         self.add_new_row()
 
         self.scroll_area.setWidget(self.widget)
-        self.setFixedSize(400, 300)
+        self.setFixedSize(475, 300)
 
         self.setLayout(QVBoxLayout(self))
         self.layout().addWidget(self.scroll_area)
@@ -42,8 +43,12 @@ class MaltsScrollArea(QWidget):
     def add_new_row(self):
         horizontal_box = QHBoxLayout()
         line_edit = QLineEdit()
+        line_edit.setMaximumWidth(25)
+        line_edit.textEdited.connect((
+            lambda text: self.line_edit_signal(text, horizontal_box)))
         combo_box = self.init_combo_box()
         remove_button = QPushButton("Remove")
+        remove_button.setMaximumWidth(60)
         remove_button.clicked.connect(
             lambda _, horizontal_box=horizontal_box: self.remove_row(horizontal_box))
 
@@ -58,18 +63,46 @@ class MaltsScrollArea(QWidget):
         self.vertical_box.addLayout(horizontal_box)
 
     def remove_row(self, horizontal_box):
+        index = self.get_row(horizontal_box)
+        values = self.manager.ingredient_removed(index, "malts")
+        self.data_grid.update_values(values)
+
         self.layout().removeItem(horizontal_box)
 
         for i in reversed(range(horizontal_box.count())):
             horizontal_box.itemAt(i).widget().setParent(None)
         horizontal_box.setParent(None)
+    
+    def get_row(self, horizontal_box):
+        # Returns the index of the horizontal box on the vertical box
+        for i in range(self.vertical_box.count()):
+            item = self.vertical_box.itemAt(i)
+            if item.layout() == horizontal_box:
+                return i - 1
 
     def init_combo_box(self):
         combo_box = QComboBox()
-        combo_box.addItems(["TO BE ADDED"])
+        combo_box.setMaximumWidth(305)
+        combo_box.addItem("")
+        combo_box.addItems([malt.name for malt in self.all_malts])
+        combo_box.activated.connect(self.combo_box_signal)
 
         combo_box.setEditable(True)
         combo_box.setInsertPolicy(QComboBox.NoInsert)
         combo_box.completer().setCompletionMode(QCompleter.PopupCompletion)
+        combo_box.completer().setFilterMode(Qt.MatchContains)
 
         return combo_box
+
+    def combo_box_signal(self, index):
+        values = self.manager.ingredient_added(
+            self.all_malts[index], "malts")
+        self.data_grid.update_values(values)
+    
+    def line_edit_signal(self, text, horizontal_box):
+        try:
+            index = self.get_row(horizontal_box)
+            values = self.manager.ingredient_amount_changed(float(text), index, "malts")
+            self.data_grid.update_values(values)
+        except:
+            pass

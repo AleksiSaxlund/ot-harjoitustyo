@@ -27,8 +27,10 @@ class CalculationsGrid(QWidget):
         self.value_labels = []
         volume = "5"
 
-        volume_header = QLabel("Volume")
+        volume_header = QLabel("Volume:")
         line_edit = QLineEdit(volume)
+        line_edit.textEdited.connect((
+            lambda text: self.volume_changed(text)))
         line_edit.setMaximumWidth(50)
         layout.addWidget(volume_header, 0, 0)
         layout.addWidget(line_edit, 1, 0)
@@ -45,3 +47,10 @@ class CalculationsGrid(QWidget):
         self.initial_values = new_values
         for index, value in enumerate(new_values):
             self.value_labels[index].setText(value)
+
+    def volume_changed(self, text):
+        try:
+            results = self.manager.volume_changed(float(text))
+            self.update_values(results)
+        except:
+            pass
