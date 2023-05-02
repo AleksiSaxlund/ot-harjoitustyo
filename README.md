@@ -13,9 +13,9 @@ Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava 
 - [vaativuusmaarittely.md](./harjoitustyo/dokumentaatio/vaativuusmaarittely.md)
 - [arkkitehtuuri.md](./harjoitustyo/dokumentaatio/arkkitehtuuri.md)
 
-## Asennusohjeet:
+## Käyttöohje
 
-Suorita komento `poetry install` /harjoitustyo/ kansiossa. Tämän jälkeen sovellus käynnistyy `poetry run invoke start` komennolla.
+[käyttoohje.md](./harjoitustyo/dokumentaatio/kayttoohje.md)
 
 ## Komentorivitoiminnot
 

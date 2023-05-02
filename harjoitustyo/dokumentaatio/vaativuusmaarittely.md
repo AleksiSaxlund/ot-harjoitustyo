@@ -30,6 +30,6 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
 
 ## Käyttöliittymäluonnos
 
-![Käyttöliittymäluonnos](./kuvat/kayttoliittyma-hahmotelma.png)
+![Käyttöliittymäluonnos](./images/kayttoliittyma-hahmotelma.png)
 
 Sovellus aukeaa pienempään ikkunaan, josta voi lopullisessa sovelluksessa valita uuden reseptin tai ladata olemassa olevan reseptin. Reseptin lataus ominaisuuden valmistuminen ei ole taattu, mutta se on luonnoksessa mukana, jotta aloitusikkuna ei vaikuta täysin turhalta. Aloitusikkunasta siirrytään varsinaiseen laskimeen, jossa on oma ruutu jokaiselle ainesosalle. Yläreunassa olevat arvot päivittyvät aina, kun ainesosiin tehdään muutoksia.

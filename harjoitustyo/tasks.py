@@ -23,7 +23,3 @@ def format(ctx):
 @task 
 def lint(ctx):
     ctx.run("pylint src", pty=True)
-
-@task
-def start_text(ctx):
-    ctx.run("python3 src/text_index.py", pty=True)

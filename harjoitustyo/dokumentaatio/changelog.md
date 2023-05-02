@@ -35,3 +35,9 @@
 - Lisätty muistiinpano ominaisuus
 - Luotu manager_services vastaamaan sovelluslogiikasta
 - Lisätty testikattavuutta
+
+## Viikko 6
+
+- Siirrytty graafiseen käyttöliittymään.
+- Poistettu ylimääräinen tekstikäyttöliittymään liittyvä koodi.
+- DOCSTRING lisätty lähes kaikkiin käyttöliittymän ulkopuolisiin luokkiin.

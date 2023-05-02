@@ -72,7 +72,6 @@ class CalculationsService:
 
         return final_gravity
 
-    # ABV KAAVA = (OG - FG) * 131.25
     def calculate_abv(self):
         """Calculates the abv of the recipe using values saved into the recipe class.
 
@@ -87,8 +86,6 @@ class CalculationsService:
         abv = (original_gravity - final_gravity) * 131.25
         return round(abv / 1000, 2)
 
-    # MCU = (MALTAIDEN MÄÄRÄ * MALTAAN VÄRIASTE) / MÄÄRÄ
-    # SRM VÄRI = 1.4922 * (MCU ^ 0.6859)
     def calculate_color(self):
         """Calculates the srm of the recipe using values saved into the recipe class.
 
@@ -112,8 +109,6 @@ class CalculationsService:
 
         return round(color, 2)
 
-    # AAU = AMOUNT * ALPHA ACID%
-    # IBU = AAU * U * VOLUME
     def calculate_ibu(self):
         """Calculates the ibu of the recipe using values saved into the recipe class.
 

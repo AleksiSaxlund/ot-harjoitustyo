@@ -1,6 +1,13 @@
 
 class Recipe:
+    """Class which represents the whole recipe.
+    All ingredients and values are taken from here and updated into here.
+    """
+
     def __init__(self):
+        """Constructor of the class. Initialized an empty recipe.
+        """
+
         self.ingredients = {"malts": [], "hops": [], "yeasts": []}
         self.original_gravity = 1
         self.final_gravity = 1
