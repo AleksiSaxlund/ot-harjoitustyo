@@ -14,6 +14,6 @@
 | 19.4. | 4    | PyQt5 harjoittelua |
 | 24.4. | 7    | Käyttöliittymän tekemistä |
 | 25.4. | 6    | Käyttöliittymän jatkamista ja lopullisen sovelluslogiikan sovittelua |
-| 26.4. | 2    | DOCSTRINGien aloittelua |
-| 2.5.  | 3    | DOCSTRINGit loppuun, koodin siistimistä ja dokumentaation tekoa |
-| yht   | 44   |           |
+| 26.4. | 4    | GUI lopulta toimitaan. DOCSTRINGien aloittelua |
+| 2.5.  | 2    | DOCSTRINGIien loppuun tekoa, dokumentaation tekoa ja koodin siistimistä |
+| yht   | 45   |           |
