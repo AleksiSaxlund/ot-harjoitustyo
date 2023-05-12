@@ -8,7 +8,7 @@ from PyQt5.QtCore import Qt, QRegExp
 
 class CalculationsGrid(QWidget):
     """Widget consisting of gridlayout which shows all of the calculations of the recipe.
-    
+
     Has also the volume change line edit.
     """
 

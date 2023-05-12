@@ -135,7 +135,7 @@ class YeastsScrollArea(QWidget):
             index (int): Index of the chosen item in the combo box.
             horizontal_box (hbox): Hbox which this combo box is a part of.
         """
-        
+
         row_index = self.get_row(horizontal_box)
         values = self.manager.ingredient_added(
             self.all_yeasts[index-1], "yeasts", row_index)

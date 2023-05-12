@@ -19,7 +19,7 @@ class NotesTextBox(QWidget):
     def init_ui(self):
         """Initializes the widgets of the widget.
         """
-        
+
         font = self.font()
         font.setPointSize(10)
         self.window().setFont(font)

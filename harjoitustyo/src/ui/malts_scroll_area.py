@@ -167,7 +167,7 @@ class MaltsScrollArea(QWidget):
         Args:
             text (str): The user input in the volume line edit.
         """
-        
+
         try:
             index = self.get_row(horizontal_box)
             values = self.manager.ingredient_amount_changed(
