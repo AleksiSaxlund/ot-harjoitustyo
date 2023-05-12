@@ -18,7 +18,7 @@ Sovelluksen tarkoitus on olla käyttäjälle työkalu erilaisten kotipanimo rese
   - SRM
 - Käyttäjä voi itse kirjoittaa erillisiä muistiinpanoja reseptistä
 
-### Ohjelman rajoituksia oluenpanijan näkökulmasta
+## Ohjelman rajoituksia oluenpanijan näkökulmasta
 
 Monissa ohjelman laskennallisissa toiminnoissa käytetään oletusarvoja joillekkin muuttujille. Tämä tarkoittaa, että laskut eivät aina ole niin tarkkoja, kuin olisi mahdollista.
 
