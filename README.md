@@ -8,7 +8,7 @@ Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava 
 
 ## Dokumentaatio
 
-- [käyttoohje.md](./harjoitustyo/dokumentaatio/kayttoohje.md)
+- [kayttoohje.md](./harjoitustyo/dokumentaatio/kayttoohje.md)
 - [tyoaikakirjanpito.md](./harjoitustyo/dokumentaatio/tyoaikakirjanpito.md)
 - [changelog.md](./harjoitustyo/dokumentaatio/changelog.md)
 - [vaativuusmaarittely.md](./harjoitustyo/dokumentaatio/vaativuusmaarittely.md)
