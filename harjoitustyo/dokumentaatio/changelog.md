@@ -44,3 +44,8 @@
 
 ## Viikko 7
 
+- Korjattu bugeja.
+- Lisätty testejä.
+- Täytetty dokumentaatiota.
+- Lisätty DOCSTRING:ejä.
+
