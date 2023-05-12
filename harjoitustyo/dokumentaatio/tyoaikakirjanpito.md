@@ -16,4 +16,5 @@
 | 25.4. | 6    | Käyttöliittymän jatkamista ja lopullisen sovelluslogiikan sovittelua |
 | 26.4. | 4    | GUI lopulta toimitaan. DOCSTRINGien aloittelua |
 | 2.5.  | 2    | DOCSTRINGIien loppuun tekoa, dokumentaation tekoa ja koodin siistimistä |
-| yht   | 45   |           |
+| 12.5. | 4    | Loput DOCSTRING:it, Dokumentaation täydennys ja bugien korjailua |
+| yht   | 49   |           |
