@@ -20,10 +20,6 @@ Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava 
 
 	poetry run invoke start
 
-### Ohjelman tekstipohjaisen version käynnistys:
-
-    poetry run invoke start-text
-
 ### Testien suoritus:
 
     poetry run invoke test
