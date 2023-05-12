@@ -6,11 +6,20 @@ from PyQt5.QtCore import Qt
 
 
 class NotesTextBox(QWidget):
+    """Widget that has the textbox for the notes.
+    """
+
     def __init__(self):
+        """Constructor of the class.
+        """
+
         super().__init__()
         self.init_ui()
 
     def init_ui(self):
+        """Initializes the widgets of the widget.
+        """
+        
         font = self.font()
         font.setPointSize(10)
         self.window().setFont(font)

@@ -8,7 +8,19 @@ from PyQt5.QtCore import Qt, QRegExp
 
 
 class MaltsScrollArea(QWidget):
+    """Widget consisting of the scrollarea for managing malts of the recipe.
+
+    This scrollarea consists of a vboxlayout consisting of hboxlayouts. 
+    """
+
     def __init__(self, data_grid, manager):
+        """Consturctor of the class.
+
+        Args:
+            data_grid (QWidget): Calculations grid widget.
+            manager (Manager_services): Manager_services class of the recipe.
+        """
+
         super().__init__()
         self.manager = manager
         self.data_grid = data_grid
@@ -16,6 +28,9 @@ class MaltsScrollArea(QWidget):
         self.init_ui()
 
     def init_ui(self):
+        """Initializes the widgets.
+        """
+
         font = self.font()
         font.setPointSize(10)
         self.window().setFont(font)
@@ -42,6 +57,9 @@ class MaltsScrollArea(QWidget):
         self.layout().addWidget(self.scroll_area)
 
     def add_new_row(self):
+        """Adds a new row to the vbox. Row consists of a lineedit, combobox and a button.
+        """
+
         horizontal_box = QHBoxLayout()
         line_edit = QLineEdit()
         line_edit.setMaximumWidth(25)
@@ -69,6 +87,13 @@ class MaltsScrollArea(QWidget):
         self.vertical_box.addLayout(horizontal_box)
 
     def remove_row(self, horizontal_box):
+        """Removes a row from the vbox and the corresponding ingredient from the recipe.
+        Then updates the calculation values.
+
+        Args:
+            horizontal_box (QWidgget): The hbox to be removed.
+        """
+
         index = self.get_row(horizontal_box)
         values = self.manager.ingredient_removed(index, "malts")
         self.data_grid.update_values(values)
@@ -80,13 +105,30 @@ class MaltsScrollArea(QWidget):
         horizontal_box.setParent(None)
 
     def get_row(self, horizontal_box):
-        # Returns the index of the horizontal box on the vertical box
+        """Gets the row index of the horizontal box.
+
+        Args:
+            horizontal_box (hbox): The horizontal box.
+
+        Returns:
+            int: Index of the hbox on the vbox. Counting starts from top and from 0.
+        """
+
         for i in range(self.vertical_box.count()):
             item = self.vertical_box.itemAt(i)
             if item.layout() == horizontal_box:
                 return i - 1
 
     def init_combo_box(self, horizontal_box):
+        """Initializes the combo box.
+
+        Args:
+            horizontal_box (hbox): The hbox which this combobox is a part of.
+
+        Returns:
+            combobox: This combobox.
+        """
+
         combo_box = QComboBox()
         combo_box.setMaximumWidth(305)
         combo_box.addItem("")
@@ -102,12 +144,30 @@ class MaltsScrollArea(QWidget):
         return combo_box
 
     def combo_box_signal(self, index, horizontal_box):
+        """Signal of the combo box.
+
+        Args:
+            index (int): Index of the chosen item in the combo box.
+            horizontal_box (hbox): Hbox which this combo box is a part of.
+        """
+
         row_index = self.get_row(horizontal_box)
         values = self.manager.ingredient_added(
             self.all_malts[index-1], "malts", row_index)
         self.data_grid.update_values(values)
 
     def line_edit_signal(self, text, horizontal_box):
+        """Handles the changes of this line edit.
+
+        Converts the value into float and passes it on to the manager.
+
+        This should not receive incorrect inputs due to line edits validator but try/except keeps
+        it safe in case of an unprepared inputs.
+
+        Args:
+            text (str): The user input in the volume line edit.
+        """
+        
         try:
             index = self.get_row(horizontal_box)
             values = self.manager.ingredient_amount_changed(

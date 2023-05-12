@@ -7,12 +7,25 @@ from PyQt5.QtCore import Qt, QRegExp
 
 
 class CalculationsGrid(QWidget):
+    """Widget consisting of gridlayout which shows all of the calculations of the recipe.
+    
+    Has also the volume change line edit.
+    """
+
     def __init__(self, manager):
+        """Constructor of the class.
+
+        Args:
+            manager (Manager_services): The manager_services class of the recipe.
+        """
         super().__init__()
         self.manager = manager
         self.init_ui()
 
     def init_ui(self):
+        """Initializes the widgets.
+        """
+
         font = self.font()
         font.setPointSize(10)
         self.window().setFont(font)
@@ -48,11 +61,28 @@ class CalculationsGrid(QWidget):
             self.value_labels.append(value_label)
 
     def update_values(self, new_values):
+        """Updates all of the labels when an ingredient is changed.
+
+        Args:
+            new_values (list): A list consisting of the new values.
+        """
+
         self.initial_values = new_values
         for index, value in enumerate(new_values):
             self.value_labels[index].setText(value)
 
     def volume_changed(self, text):
+        """Handles the change of the volume line edit.
+
+        Converts the value into float and passes it on to the manager.
+
+        This should not receive incorrect inputs due to line edits validator but try/except keeps
+        it safe in case of an unprepared inputs.
+
+        Args:
+            text (str): The user input in the volume line edit.
+        """
+
         try:
             results = self.manager.volume_changed(float(text))
             self.update_values(results)
