@@ -26,20 +26,27 @@ class ManagerServices():
         self.recipe = recipe
         self.calculator = CalculationsService(self.recipe)
 
-    def ingredient_added(self, ingredient, ingredient_type):
+    def ingredient_added(self, ingredient, ingredient_type, row_index):
         """Handles the adding of new ingredients to the recipe.
+
+        Adds None into the ingredient list so that the list indexes and UI ingredient rows match.
+        Calculations know to ignore the None ingredients.
 
         Args:
             Ingredient (Malt, Hop, Yeast): Corresponding class object to the ingredient type.
             Ingredient_type (str): Is one of the following: "malts", "hops", "yeasts".
                                 Acts as a dictionary key for the recipe.
+            Row_index (int): index of the ingredient that will be changed.
 
         Returns:
             list: A list of all updated and formatted calculations for the ui.
         """
 
+        while len(self.recipe.ingredients[ingredient_type]) <= row_index:
+            self.recipe.ingredients[ingredient_type].append(None)
+
         if ingredient_type in ["malts", "hops", "yeasts"]:
-            self.recipe.ingredients[ingredient_type].append(ingredient)
+            self.recipe.ingredients[ingredient_type][row_index] = ingredient
 
         results = self.update_calculations()
         return results

@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import (
     QLineEdit, QComboBox, QHBoxLayout, QCompleter
 )
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QRegExpValidator
+from PyQt5.QtCore import Qt, QRegExp
 
 
 class MaltsScrollArea(QWidget):
@@ -44,9 +45,14 @@ class MaltsScrollArea(QWidget):
         horizontal_box = QHBoxLayout()
         line_edit = QLineEdit()
         line_edit.setMaximumWidth(25)
+
+        regex = QRegExp("[0-9]+(\\.[0-9]+)?")
+        validator = QRegExpValidator(regex)
+        line_edit.setValidator(validator)
+
         line_edit.textEdited.connect((
             lambda text: self.line_edit_signal(text, horizontal_box)))
-        combo_box = self.init_combo_box()
+        combo_box = self.init_combo_box(horizontal_box)
         remove_button = QPushButton("Remove")
         remove_button.setMaximumWidth(60)
         remove_button.clicked.connect(
@@ -80,12 +86,13 @@ class MaltsScrollArea(QWidget):
             if item.layout() == horizontal_box:
                 return i - 1
 
-    def init_combo_box(self):
+    def init_combo_box(self, horizontal_box):
         combo_box = QComboBox()
         combo_box.setMaximumWidth(305)
         combo_box.addItem("")
         combo_box.addItems([malt.name for malt in self.all_malts])
-        combo_box.activated.connect(self.combo_box_signal)
+        combo_box.activated.connect(
+            lambda index: self.combo_box_signal(index, horizontal_box))
 
         combo_box.setEditable(True)
         combo_box.setInsertPolicy(QComboBox.NoInsert)
@@ -94,9 +101,10 @@ class MaltsScrollArea(QWidget):
 
         return combo_box
 
-    def combo_box_signal(self, index):
+    def combo_box_signal(self, index, horizontal_box):
+        row_index = self.get_row(horizontal_box)
         values = self.manager.ingredient_added(
-            self.all_malts[index], "malts")
+            self.all_malts[index-1], "malts", row_index)
         self.data_grid.update_values(values)
 
     def line_edit_signal(self, text, horizontal_box):

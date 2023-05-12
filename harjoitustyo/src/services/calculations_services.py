@@ -35,7 +35,8 @@ class CalculationsService:
         gravity_units = 0
 
         for malt in self._recipe.ingredients["malts"]:
-            gravity_units += malt.amount * malt.ppg
+            if malt:
+                gravity_units += malt.amount * malt.ppg
 
         original_gravity = (gravity_units / self._recipe.volume) * \
             self._recipe.mashing_efficiency
@@ -63,7 +64,8 @@ class CalculationsService:
         average_attenuation = 0
 
         for yeast in self._recipe.ingredients["yeasts"]:
-            average_attenuation += yeast.attenuation
+            if yeast:
+                average_attenuation += yeast.attenuation
 
         average_attenuation /= len(self._recipe.ingredients["yeasts"])
         average_attenuation -= 0.0225 * (65 - 67.5)
@@ -103,7 +105,8 @@ class CalculationsService:
         color = 0
 
         for malt in self._recipe.ingredients["malts"]:
-            malt_color_units += malt.amount * malt.color
+            if malt:
+                malt_color_units += malt.amount * malt.color
 
         color = 1.4922 * ((malt_color_units / self._recipe.volume) ** 0.6859)
 
@@ -128,7 +131,8 @@ class CalculationsService:
 
         alpha_acid_units = 0
         for hop in self._recipe.ingredients["hops"]:
-            alpha_acid_units += hop.amount * hop.alpha_acids
+            if hop:
+                alpha_acid_units += hop.amount * hop.alpha_acids
 
         international_bitterin_units = (
             alpha_acid_units * 0.276 * 74.89) / self._recipe.volume

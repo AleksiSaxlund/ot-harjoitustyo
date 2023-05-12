@@ -49,7 +49,7 @@ class YeastsScrollArea(QWidget):
     def add_new_row(self):
         # Create objects
         horizontal_box = QHBoxLayout()
-        combo_box = self.init_combo_box()
+        combo_box = self.init_combo_box(horizontal_box)
         remove_button = QPushButton("Remove")
         remove_button.setMaximumWidth(60)
         remove_button.clicked.connect(
@@ -83,13 +83,14 @@ class YeastsScrollArea(QWidget):
             if item.layout() == horizontal_box:
                 return i - 1
 
-    def init_combo_box(self):
+    def init_combo_box(self, horizontal_box):
         # Create object
         combo_box = QComboBox()
         combo_box.setMaximumWidth(345)
         combo_box.addItem("")
         combo_box.addItems([yeast.name for yeast in self.all_yeasts])
-        combo_box.activated.connect(self.combo_box_signal)
+        combo_box.activated.connect(
+            lambda index: self.combo_box_signal(index, horizontal_box))
 
         # Setup combo box
         combo_box.setEditable(True)
@@ -99,7 +100,8 @@ class YeastsScrollArea(QWidget):
 
         return combo_box
 
-    def combo_box_signal(self, index):
+    def combo_box_signal(self, index, horizontal_box):
+        row_index = self.get_row(horizontal_box)
         values = self.manager.ingredient_added(
-            self.all_yeasts[index], "yeasts")
+            self.all_yeasts[index-1], "yeasts", row_index)
         self.data_grid.update_values(values)

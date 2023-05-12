@@ -4,18 +4,15 @@ Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava 
 
 ## Release
 
-[release](https://github.com/AleksiSaxlund/ot-harjoitustyo/releases/tag/viikko5)
+- [release](https://github.com/AleksiSaxlund/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Dokumentaatio
 
+- [käyttoohje.md](./harjoitustyo/dokumentaatio/kayttoohje.md)
 - [tyoaikakirjanpito.md](./harjoitustyo/dokumentaatio/tyoaikakirjanpito.md)
 - [changelog.md](./harjoitustyo/dokumentaatio/changelog.md)
 - [vaativuusmaarittely.md](./harjoitustyo/dokumentaatio/vaativuusmaarittely.md)
 - [arkkitehtuuri.md](./harjoitustyo/dokumentaatio/arkkitehtuuri.md)
-
-## Käyttöohje
-
-[käyttoohje.md](./harjoitustyo/dokumentaatio/kayttoohje.md)
 
 ## Komentorivitoiminnot
 

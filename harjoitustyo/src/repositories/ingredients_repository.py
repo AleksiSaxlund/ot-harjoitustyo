@@ -69,7 +69,7 @@ class YeastsRepository:
         """
 
         self._connection = database_connections.get_yeasts_connection()
-        self._yeasts = self._connection.execute(
+        self.yeasts = self._connection.execute(
             "SELECT name, attenuation, temperature_range FROM Yeasts", []
         ).fetchall()
 
@@ -82,7 +82,7 @@ class YeastsRepository:
         """
         yeasts = []
 
-        for yeast in self._yeasts:
+        for yeast in self.yeasts:
             yeasts.append(Yeast(yeast[0], float(yeast[1]), yeast[2]))
 
         return yeasts

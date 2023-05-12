@@ -4,6 +4,12 @@ Aloita lataamalla viimeisimmän [releasen](https://github.com/AleksiSaxlund/ot-h
 
 ## Ohjelman käynnistäminen
 
+Ensimmäisellä käynnistyskerralla asenna riippuvuudet komennolla:
+
+```
+poetry install
+```
+
 Ohjelma ei vaadi erillistä konfigurointia. Voit käynnistää sen suoraan komennolla:
 
 ```

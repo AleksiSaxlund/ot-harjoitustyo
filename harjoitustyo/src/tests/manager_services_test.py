@@ -12,6 +12,6 @@ class TestCalculationsService(unittest.TestCase):
     def test_yeast_added_to_recipe(self):
         yeast = Yeast("test yeast", 15.2, "12-45")
 
-        self.manager.ingredient_added(yeast, "yeasts")
+        self.manager.ingredient_added(yeast, "yeasts", 0)
 
         self.assertEqual(self.recipe.ingredients["yeasts"][0], yeast)

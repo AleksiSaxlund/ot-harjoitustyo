@@ -41,3 +41,6 @@
 - Siirrytty graafiseen käyttöliittymään.
 - Poistettu ylimääräinen tekstikäyttöliittymään liittyvä koodi.
 - DOCSTRING lisätty lähes kaikkiin käyttöliittymän ulkopuolisiin luokkiin.
+
+## Viikko 7
+

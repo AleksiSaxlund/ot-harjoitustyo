@@ -2,7 +2,8 @@ from PyQt5.QtWidgets import (
     QWidget, QLineEdit, QGridLayout, QLabel
 )
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QRegExpValidator
+from PyQt5.QtCore import Qt, QRegExp
 
 
 class CalculationsGrid(QWidget):
@@ -29,6 +30,9 @@ class CalculationsGrid(QWidget):
 
         volume_header = QLabel("Volume:")
         line_edit = QLineEdit(volume)
+        regex = QRegExp("[0-9]+(\\.[0-9]+)?")
+        validator = QRegExpValidator(regex)
+        line_edit.setValidator(validator)
         line_edit.textEdited.connect((
             lambda text: self.volume_changed(text)))
         line_edit.setMaximumWidth(50)
