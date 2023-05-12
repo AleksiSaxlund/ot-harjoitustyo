@@ -7,7 +7,7 @@ Ohjelmistoa on testattu yksikkö- ja integraatiotasolla. Moni luokka on riippuva
 
 Haarautumakattavuus on 87% käyttöliittymäkerrosta lukuunottamatta.
 
-![testikattavuus](/dokumentaatio/images/coverage_report.png)
+![testikattavuus](./images/coverage_report.png)
 
 ## Järjestelmätestaus
 
@@ -15,11 +15,11 @@ Järjestelmätestaus on manuaalisesti käsin suoritettua.
 
 ### Asennus
 
-Sovellusta on testatty [käyttöohjeen](/dokumentaatio/kayttoohje.md) opastamalla tavalla Windows 10- sekä Linux ympäristöissä.
+Sovellusta on testatty [käyttöohjeen](./kayttoohje.md) opastamalla tavalla Windows 10- sekä Linux ympäristöissä.
 
 ### Toiminnallisuuksien testaus
 
-Sovelluksen toiminnallisuudet on testattu syöttämällä virheellisiä, tyhjiä sekä oikeita arvoja syötekenttiin. Sovelluksen laskujen tulokset saattavat olla ajoittain epätarkkoja, mutta se ei johdu siitä, että ohjelmassa olisi virheellistä koodia. Tästä lisää [vaativuusmäärittelyn](/dokumentaatio/vaativuusmaarittely.md) "Ohjelman rajoituksia oluenpanijan näkökulmasta"-osiosta.
+Sovelluksen toiminnallisuudet on testattu syöttämällä virheellisiä, tyhjiä sekä oikeita arvoja syötekenttiin. Sovelluksen laskujen tulokset saattavat olla ajoittain epätarkkoja, mutta se ei johdu siitä, että ohjelmassa olisi virheellistä koodia. Tästä lisää [vaativuusmäärittelyn](./vaativuusmaarittely.md) "Ohjelman rajoituksia oluenpanijan näkökulmasta"-osiosta.
 
 ## Sovellukseen jääneet tunnetut bugit
 
