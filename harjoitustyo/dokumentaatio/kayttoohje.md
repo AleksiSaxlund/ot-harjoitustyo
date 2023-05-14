@@ -16,6 +16,10 @@ Ohjelma ei vaadi erillistä konfigurointia. Voit käynnistää sen suoraan komen
 poetry run invoke start
 ```
 
+## Huomioitavaa
+
+Ohjelma ei toimi, jos */src/* tai */data/* hakemistojen sisällä olevia tiedostoja poistetaan, tai niiden nimiä muutetaan.
+
 ## Ohjelman käyttäminen
 
 Sovellus aukeaa suoraan reseptinsuunnittelu näkymään:
