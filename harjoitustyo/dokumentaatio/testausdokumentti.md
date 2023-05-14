@@ -5,7 +5,7 @@ Ohjelmistoa on testattu yksikkö- ja integraatiotasolla. Moni luokka on riippuva
 
 ## Testikattavuus
 
-Haarautumakattavuus on 87% käyttöliittymäkerrosta lukuunottamatta.
+Haarautumakattavuus on 86% käyttöliittymäkerrosta lukuunottamatta.
 
 ![testikattavuus](./images/coverage_report.png)
 
@@ -24,3 +24,7 @@ Sovelluksen toiminnallisuudet on testattu syöttämällä virheellisiä, tyhjiä
 ## Sovellukseen jääneet tunnetut bugit
 
 - Ainesosia lisätessä niiden oletusmäärä on 0. Tämä määrä pysyy kunnes ainesosan määrä päivitetään vastaavasta syötekentästä.
+
+## Varautumattomia virhetilanteita
+
+- Ohjelmisto olettaa, että */data/*, sekä */src/* hakemistoissa oleviin tiedostoihin ei ole tehty muutoksia tai, että niitä ei ole poistettu. Sovellus saattaa kaatua tai tuottaa virhekoodin, jos lähdekoodiin tai kyseisten hakemistojen tiedostoihin on tehty muutoksia.
