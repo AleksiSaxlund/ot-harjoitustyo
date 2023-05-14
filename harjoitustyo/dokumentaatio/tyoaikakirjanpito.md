@@ -17,4 +17,5 @@
 | 26.4. | 4    | GUI lopulta toimitaan. DOCSTRINGien aloittelua |
 | 2.5.  | 2    | DOCSTRINGIien loppuun tekoa, dokumentaation tekoa ja koodin siistimistä |
 | 12.5. | 4    | Loput DOCSTRING:it, Dokumentaation täydennys ja bugien korjailua |
-| yht   | 49   |           |
+| 14.5. | 1    | Lisää dokumentaatiota |
+| yht   | 50   |           |
