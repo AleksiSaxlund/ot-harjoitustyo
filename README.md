@@ -4,7 +4,7 @@ Homebrewing Calculator on sovellus, jonka avulla oluen kotipanemista harrastava 
 
 ## Release
 
-- [release](https://github.com/AleksiSaxlund/ot-harjoitustyo/releases/tag/viikko5)
+- [release](https://github.com/AleksiSaxlund/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Dokumentaatio
 
