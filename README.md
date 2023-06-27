@@ -1,4 +1,4 @@
-⚠️ This repository contains tasks for the course **Ohjelmistotektiikka 2023** from *Helsingin Yliopisto*.
+⚠️ This repository contains tasks for the course **Ohjelmistotekniikka 2023** from *Helsingin Yliopisto*.
 
 # Homebrewing Calculator
 
